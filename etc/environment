@@ -1,0 +1,9 @@
+# Linux GUI Theming
+# https://wiki.archlinux.org/title/Uniform_look_for_Qt_and_GTK_applications
+# GTK Theming
+# https://www.reddit.com/r/archlinux/comments/sohrqm/change_gtk4_theme/
+# GTK3 alternate config: ~/.config/gtk-3.0/settings.ini
+# List all GTK Themes: ls /usr/share/themes/
+QT_QPA_PLATFORMTHEME=qt6ct
+GTK_THEME=Adwaita-dark
+GTK3_THEME=Adwaita-dark

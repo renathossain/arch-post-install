@@ -1,0 +1,48 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+# Default config file (in case something goes wrong): /etc/i3status.conf
+# Documentation: https://i3wm.org/docs/i3status.html
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "battery all"
+order += "disk /"
+order += "cpu_usage"
+order += "memory"
+order += "tztime local_date"
+order += "tztime local_time"
+
+battery all {
+        format = "%status: %percentage %remaining"
+}
+
+disk "/" {
+        format = "STOR: %avail"
+}
+
+cpu_usage {
+        format = "CPU: %usage"
+}
+
+memory {
+        format = "USED: %used AVAIL: %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+tztime local_date {
+    format = "%A, %B %d, %Y"
+}
+
+tztime local_time {
+    format = "%I:%M %p"
+}
