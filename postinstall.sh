@@ -12,6 +12,7 @@ cp -rf local/* ~/.local/
 sudo cp -rf etc/* /etc/
 sudo cp -rf usr/* /usr/
 sudo cp -rf boot/* /boot/
+sudo cp -rf Templates/* ~/Templates/
 
 # Upgrade the system
 sudo pacman -Syu --noconfirm
