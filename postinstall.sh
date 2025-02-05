@@ -49,6 +49,7 @@ apps=(
     gimp                            # Image Editor
     libheif                         # Support Apple's .HEIF Image Format
     mpv                             # Video Player
+    discord                         # Communication
 
     # Software Development
     kitty                           # Terminal Emulator
