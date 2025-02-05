@@ -160,9 +160,6 @@ sudo systemctl enable docker
 
 # XFCE Settings
 xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -t int -s 1 --create # Suspend
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -t int -s 1 --create # Suspend
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/critical-power-action -t int -s 2 --create # Hibernate on low power
 xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -s true --create
 xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/AudioLowerVolume -t string -s "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-" --create 
 xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/AudioRaiseVolume -t string -s "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+" --create
