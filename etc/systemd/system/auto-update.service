@@ -1,0 +1,6 @@
+[Unit]
+Description=Automatic system updater using yay
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/auto_update.sh

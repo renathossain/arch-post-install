@@ -118,6 +118,10 @@ aur_string=$(IFS=' '; echo "${aur_apps[*]}")
 yay -S --needed --noconfirm $apps_string
 yay -S --needed --noconfirm $aur_string
 
+# Register the Services
+sudo systemctl daemon-reload
+systemctl --user daemon-reload
+
 # Enable Periodic SSD TRIM Support
 sudo systemctl enable fstrim.timer
 
@@ -141,6 +145,14 @@ sudo systemctl enable cronie.service
 sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
 
+# Enable Printer Service
+sudo systemctl start cups
+sudo systemctl enable cups
+
+# Auto-update service
+sudo systemctl enable auto-update.timer
+sudo systemctl start auto-update.timer
+
 # Enable Docker Service
 sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
@@ -152,14 +164,6 @@ xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
 xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -s true --create
 xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/AudioLowerVolume -t string -s "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-" --create 
 xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/AudioRaiseVolume -t string -s "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+" --create
-
-# Enable Printer Service
-sudo systemctl start cups
-sudo systemctl enable cups
-
-# Register the Services
-sudo systemctl daemon-reload
-systemctl --user daemon-reload
 
 ###### CLEANUP ######
 

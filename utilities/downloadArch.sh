@@ -8,9 +8,9 @@ mkdir -p ~/Downloads
 cd ~/Downloads
 
 # Fill in the latest links from: https://archlinux.org/download/
-TORRENT_MAGNET="magnet:?xt=urn:btih:6f1bde857b97b382f8841cdf3a42c530b3f4e34e&dn=archlinux-2024.09.01-x86_64.iso"
-SHA_SIGNATURE="https://archlinux.org/iso/2024.09.01/sha256sums.txt"
-PGP_SIGNATURE="https://archlinux.org/iso/2024.09.01/archlinux-2024.09.01-x86_64.iso.sig"
+TORRENT_MAGNET="magnet:?xt=urn:btih:c5919866bb860b51dcc8e242add5fed5d8045b15&dn=archlinux-2025.02.01-x86_64.iso"
+SHA_SIGNATURE="https://archlinux.org/iso/2025.02.01/sha256sums.txt"
+PGP_SIGNATURE="https://archlinux.org/iso/2025.02.01/archlinux-2025.02.01-x86_64.iso.sig"
 
 # Start the Deluge service
 systemctl --user start deluged.service
