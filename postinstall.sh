@@ -70,6 +70,7 @@ apps=(
     breeze-icons                    # Icon Theme
     
     # System Utilities
+    exfat-utils                     # The ExFAT file system
     unrar                           # Extract .rar files
     neofetch                        # Display Info About OS
     desktop-file-utils              # MIME Cache
