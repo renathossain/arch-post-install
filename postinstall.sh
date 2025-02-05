@@ -103,8 +103,7 @@ apps=(
 # Install AUR unofficial apps
 # View all installed unofficial/AUR packages: `pacman -Qmq`
 aur_apps=(
-    libpamac-aur                        # pamac-aur dependency
-    pamac-aur                           # Alternate AUR Helper
+    bauh                                # AUR Helper GUI
     downgrade                           # Downgrade Arch Packages
     cndrvcups-lb-bin                    # Printer Driver
     localsend-bin                       # Cross-platform Airdrop
@@ -161,6 +160,9 @@ sudo systemctl enable docker
 
 # XFCE Settings
 xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -s 1 # Suspend
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -s 1 # Suspend
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/critical-power-action -s 2 # Hibernate on low power
 xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -s true --create
 xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/AudioLowerVolume -t string -s "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-" --create 
 xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/AudioRaiseVolume -t string -s "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+" --create
