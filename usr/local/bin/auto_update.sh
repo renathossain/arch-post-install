@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/bin/sudo /usr/bin/yay -Syu --noconfirm
-yay -Scc --noconfirm
-yay --noconfirm -Rns $(pacman -Qdtq)
-sudo rm -rf /var/lib/systemd/coredump/*
+/usr/bin/yay -Syu --noconfirm
+/usr/bin/yay -Scc --noconfirm
+/usr/bin/yay --noconfirm -Rns $(/usr/bin/yay -Qdtq)
+/usr/bin/rm -rf /var/lib/systemd/coredump/*
