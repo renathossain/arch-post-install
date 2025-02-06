@@ -52,6 +52,7 @@ apps=(
     discord                         # Communication
 
     # Software Development
+    code                            # Code Editor
     kitty                           # Terminal Emulator
     git                             # Repository Management
     docker                          # Container Management
