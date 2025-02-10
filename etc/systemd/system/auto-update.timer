@@ -5,6 +5,7 @@ Description=Automatic system updater using yay
 OnBootSec=5min
 OnUnitActiveSec=6h
 Unit=auto-update.service
+Persistent=true
 
 [Install]
 WantedBy=timers.target
