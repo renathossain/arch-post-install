@@ -142,6 +142,9 @@ bindsym $mod+r mode "resize"
 # Custom Configurations #
 #########################
 
+# Wallpaper
+exec --no-startup-id /usr/bin/feh --bg-scale $HOME/.config/wallpapers/wallpaper.jpg
+
 # Remap Firefox default keyboard shortcuts
 bindsym --release Control+Right [class="firefox"] exec xdotool key --clearmodifiers Ctrl+Tab
 bindsym --release Control+Left [class="firefox"] exec xdotool key --clearmodifiers Ctrl+Shift+Tab
@@ -181,4 +184,3 @@ bar {
 
 # Touchpad Gestures
 exec --no-startup-id /usr/bin/libinput-gestures-setup stop desktop autostart start
-
