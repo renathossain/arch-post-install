@@ -3,7 +3,7 @@ Description=Automatic system updater using yay
 
 [Timer]
 OnBootSec=5min
-OnUnitActiveSec=6h
+OnUnitActiveSec=15min
 Unit=auto-update.service
 Persistent=true
 
