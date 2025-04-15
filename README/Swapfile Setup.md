@@ -1,4 +1,4 @@
-# Proper Swapfile Setup
+# Swapfile Setup
 
 Check if any swap files (or partitions) are already in use:
 
