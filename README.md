@@ -81,7 +81,7 @@ Optional repositories:       multilib
 
 # 4. Perform Swapfile Setup for Hibernation
 
-Do [Swapfile Setup](https://github.com/renathossain/arch-post-install/blob/main/README/%20Swapfile%20Setup.md) to enable hibernation.
+Do [Swapfile Setup](https://github.com/renathossain/arch-post-install/blob/main/README/Swapfile%20Setup.md) to enable hibernation.
 
 # 5. Run Post Installer
 
