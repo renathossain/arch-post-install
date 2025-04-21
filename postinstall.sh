@@ -45,7 +45,6 @@ apps=(
     handbrake                       # Video Encoding
     kclock                          # Set Alarm, Timer, Stopwatch
     cheese                          # Camera app
-    pinta                           # Drawing App
     gimp                            # Image Editor
     libheif                         # Support Apple's .HEIF Image Format
     mpv                             # Video Player
