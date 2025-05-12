@@ -1,0 +1,6 @@
+# Writing udev rules: https://www.reactivated.net/writing_udev_rules.html
+# Monitor udev events: `sudo udevadm monitor`, `sudo udevadm monitor -s usb --udev`
+# Determine environment variables: `RUN+="/usr/bin/bash -c '/usr/bin/printenv >> /var/lib/iphone/connection.status'"`
+
+SUBSYSTEM=="usb", ACTION=="add", ENV{ID_VENDOR_ID}=="05ac", RUN+="/usr/bin/bash -c '/usr/bin/echo 1 > /var/lib/iphone/connection.status'"
+SUBSYSTEM=="usb", ACTION=="remove", ENV{DEVTYPE}=="usb_device", RUN+="/usr/bin/bash -c '[[ \"$PRODUCT\" =~ ^5ac/ ]] && echo 0 > /var/lib/iphone/connection.status'"

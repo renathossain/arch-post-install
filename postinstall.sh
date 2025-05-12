@@ -12,6 +12,7 @@ cp -rf local/* ~/.local/
 sudo cp -rf etc/* /etc/
 sudo cp -rf usr/* /usr/
 sudo cp -rf boot/* /boot/
+sudo cp -rf var/* /var/
 sudo cp -rf Templates/* ~/Templates/
 
 # Upgrade the system
@@ -47,6 +48,8 @@ apps=(
     cheese                          # Camera app
     gimp                            # Image Editor
     libheif                         # Support Apple's .HEIF Image Format
+    gthumb                          # Image Viewer
+    ristretto                       # Apple .HEIF Image viewer
     mpv                             # Video Player
     discord                         # Communication
 
@@ -89,6 +92,8 @@ apps=(
     xdotool                         # Automatically Type Text
     xautomation                     # Assign Mouse Buttons
     xbindkeys                       # Assign Mouse Buttons
+    ifuse                           # Access Camera Photos and other media of Apple devices
+    gvfs-afc                        # Access iOS apps data - AFC Thunar backend for Apple devices
 
     # Hardware
     brightnessctl                   # Control the screen brightness
@@ -123,6 +128,7 @@ yay -S --needed --noconfirm $aur_string
 # Register the Services
 sudo systemctl daemon-reload
 systemctl --user daemon-reload
+sudo udevadm control --reload-rules
 
 # Enable Periodic SSD TRIM Support
 sudo systemctl enable fstrim.timer
@@ -154,6 +160,10 @@ sudo systemctl enable cups
 # Auto-update service
 sudo systemctl enable auto-update.timer
 sudo systemctl start auto-update.timer
+
+# Mount iPhone service
+systemctl --user enable iphone-monitor.service
+systemctl --user start iphone-monitor.service
 
 # Enable Docker Service
 sudo usermod -aG docker $USER

@@ -1,0 +1,10 @@
+[Unit]
+Description=iPhone Connection Monitor
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/iphone-monitor.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
