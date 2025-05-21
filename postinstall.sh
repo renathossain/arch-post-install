@@ -114,7 +114,7 @@ apps=(
 aur_apps=(
     bauh                                # AUR Helper GUI
     downgrade                           # Downgrade Arch Packages
-    # cndrvcups-lb-bin                    # Printer Driver
+    cndrvcups-lb-bin                    # Printer Driver
     localsend-bin                       # Cross-platform Airdrop
     auto-cpufreq                        # Make CPU more efficient
     onlyoffice-bin                      # Install Office Suite
