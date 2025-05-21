@@ -90,6 +90,7 @@ apps=(
     xorg-xev                        # Record Mouse Button Events
     xorg-xwininfo                   # Print Info about X11 Windows
     xorg-xset                       # Adjust X11 Screen blanking
+    xorg-xrandr                     # Display Resolution Tool
     xdotool                         # Automatically Type Text
     xautomation                     # Assign Mouse Buttons
     xbindkeys                       # Assign Mouse Buttons
