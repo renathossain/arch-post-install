@@ -176,6 +176,8 @@ sudo systemctl enable docker
 # XFCE Settings
 xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
 xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -s true --create
+# Default DPI is 96. For 1920x1080 laptop monitor, we need 1.5x scaling, so 96x1.5=144.
+# xfconf-query -c xsettings -p /Xft/DPI -s 144
 
 ###### CLEANUP ######
 
