@@ -7,14 +7,14 @@
 # To figure out what files an app is changing use: `inotifywait -m ~/`
 
 # Copy the configs
+mkdir -p ~/Templates
+cp -rf Templates/* ~/Templates/
 cp -rf config/* ~/.config/
 cp -rf local/* ~/.local/
 sudo cp -rf etc/* /etc/
 sudo cp -rf usr/* /usr/
 sudo cp -rf boot/* /boot/
 sudo cp -rf var/* /var/
-mkdir -p ~/Templates
-sudo cp -rf Templates/* ~/Templates/
 
 # Upgrade the system
 sudo pacman -Syu --noconfirm
