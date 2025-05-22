@@ -1,0 +1,5 @@
+# Change the Terminal used by Dolphin
+# https://askubuntu.com/questions/1031634/how-to-change-the-default-terminal-in-dolphin
+
+[General]
+TerminalApplication=kitty
