@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install Prerequesites
+# Install Prerequisites
 sudo pacman -S --needed deluge
 
 # Goto Download Location
