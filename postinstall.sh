@@ -16,6 +16,22 @@ sudo cp -rf usr/* /usr/
 sudo cp -rf boot/* /boot/
 sudo cp -rf var/* /var/
 
+# XFCE Settings
+xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -s true --create
+# Default DPI is 96. For 1920x1080 laptop monitor, we need 1.5x scaling, so 96x1.5=144.
+# Set DPI: `xfconf-query -c xsettings -p /Xft/DPI -s 144`
+# Theme Selection:
+read -p "Do you want to go with a light theme? (y/n): " response
+if [[ "$response" == "y" || "$response" == "Y" ]]; then
+  xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita
+  cp -rf light/config/* ~/.config/
+  sudo cp -rf light/etc/* /etc/
+else
+  xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
+  cp -rf dark/config/* ~/.config/
+  sudo cp -rf dark/etc/* /etc/
+fi
+
 # Upgrade the system
 sudo pacman -Syu --noconfirm
 
@@ -172,21 +188,6 @@ sudo usermod -aG docker $USER
 sudo chown root:docker /var/run/docker.sock
 sudo systemctl start docker
 sudo systemctl enable docker
-
-# XFCE Settings
-xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -s true --create
-# Default DPI is 96. For 1920x1080 laptop monitor, we need 1.5x scaling, so 96x1.5=144.
-# xfconf-query -c xsettings -p /Xft/DPI -s 144
-
-# Light Theme
-read -p "Do you want to go with a light theme? (y/n): " response
-if [[ "$response" == "y" || "$response" == "Y" ]]; then
-  xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita
-  cp -rf light/config/* ~/.config/
-  sudo cp -rf light/etc/* /etc/
-else
-  xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
-fi
 
 ###### CLEANUP ######
 
