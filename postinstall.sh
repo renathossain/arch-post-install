@@ -50,6 +50,8 @@ apps=(
     deluge-gtk                      # Download Torrents
     thunderbird                     # Email and Calendar
     yt-dlp                          # Download YouTube Videos
+    rsync                           # File Synchronization
+    rclone                          # Mount Cloud Storage
 
     # Productivity
     i3-wm                           # Tiling Window Manager
@@ -142,6 +144,10 @@ apps_string=$(IFS=' '; echo "${apps[*]}")
 aur_string=$(IFS=' '; echo "${aur_apps[*]}")
 yay -S --needed --noconfirm $apps_string
 yay -S --needed --noconfirm $aur_string
+
+# Install VSCodium Extension
+/bin/code --install-extension yzhang.markdown-all-in-one
+/bin/code --install-extension renathossain.markdown-runner
 
 # Register the Services
 sudo systemctl daemon-reload

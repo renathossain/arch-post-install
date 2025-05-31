@@ -1,0 +1,15 @@
+[Unit]
+Description=rclonemount %I
+After=network-online.target
+Wants=network-online.target
+AssertPathIsDirectory=%h/mnt/%I
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount --vfs-cache-mode full %I:/ %h/mnt/%I --allow-non-empty
+ExecStop=/bin/fusermount -u %h/mnt/%I
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
