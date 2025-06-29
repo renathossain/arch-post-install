@@ -40,6 +40,7 @@ sudo pacman -S --needed --noconfirm git base-devel rustup
 rustup default stable
 git config --global user.name "default" # CHANGE IF NECESSARY
 git config --global user.email "default@email.com" # CHANGE IF NECESSARY
+git pull # Update post-installer if necessary
 utilities/installpackage.sh yay "https://aur.archlinux.org/yay.git"
 
 # Install official Arch Linux apps
