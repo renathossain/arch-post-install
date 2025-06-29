@@ -6,6 +6,15 @@
 # View update package log to fix broken packages: `cat /var/log/pacman.log`
 # To figure out what files an app is changing use: `inotifywait -m ~/`
 
+# Upgrade the system, post-installer and install AUR helper
+sudo pacman -Syu --noconfirm
+sudo pacman -S --needed --noconfirm git base-devel rustup
+rustup default stable
+git config --global user.name "default" # CHANGE IF NECESSARY
+git config --global user.email "default@email.com" # CHANGE IF NECESSARY
+git pull # Update post-installer if necessary
+utilities/installpackage.sh yay "https://aur.archlinux.org/yay.git"
+
 # Copy the configs
 mkdir -p ~/Templates
 cp -rf Templates/* ~/Templates/
@@ -31,17 +40,6 @@ else
   cp -rf dark/config/* ~/.config/
   sudo cp -rf dark/etc/* /etc/
 fi
-
-# Upgrade the system
-sudo pacman -Syu --noconfirm
-
-# Install AUR Helper
-sudo pacman -S --needed --noconfirm git base-devel rustup
-rustup default stable
-git config --global user.name "default" # CHANGE IF NECESSARY
-git config --global user.email "default@email.com" # CHANGE IF NECESSARY
-git pull # Update post-installer if necessary
-utilities/installpackage.sh yay "https://aur.archlinux.org/yay.git"
 
 # Install official Arch Linux apps
 apps=(
