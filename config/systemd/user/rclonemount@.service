@@ -2,12 +2,13 @@
 Description=rclonemount %I
 After=network-online.target
 Wants=network-online.target
-AssertPathIsDirectory=%h/mnt/%I
 
 [Service]
 Type=simple
+ExecStartPre=/bin/mkdir -p %h/mnt/%I
 ExecStart=/usr/bin/rclone mount --vfs-cache-mode full %I:/ %h/mnt/%I --allow-non-empty
 ExecStop=/bin/fusermount -u %h/mnt/%I
+ExecStopPost=/bin/rmdir %h/mnt/%I
 Restart=always
 RestartSec=5
 
