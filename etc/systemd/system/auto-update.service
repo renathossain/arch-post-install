@@ -3,4 +3,4 @@ Description=Automatic system updater using yay
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/auto_update.sh
+ExecStart=/usr/bin/systemd-inhibit --what=shutdown:sleep:handle-power-key:handle-suspend-key:handle-hibernate-key:handle-lid-switch --who="Automatic system updater" --why="Please wait for update to finish." --mode=block /usr/local/bin/auto_update.sh
