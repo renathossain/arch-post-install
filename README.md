@@ -109,6 +109,12 @@ mount -o subvol=@pkg /dev/mapper/cryptroot /mnt/var/cache/pacman/pkg
 mount -o subvol=@log /dev/mapper/cryptroot /mnt/var/log
 mount /dev/vda1 /mnt/boot
 arch-chroot /mnt
+
+# The fix is usually reinstall Linux and Nvidia Drivers, Version numbers will differ
+cd /var/cache/pacman/pkg
+sudo pacman -U linux-6.15.3.arch1-1-x86_64.pkg.tar.zst
+sudo pacman -U linux-headers-6.15.3.arch1-1-x86_64.pkg.tar.zst
+sudo pacman -U nvidia-open-575.64-2-x86_64.pkg.tar.zst
 ```
 
 # Connect to the Internet After Install (if Network Manager is not present)
