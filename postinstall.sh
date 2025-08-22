@@ -7,13 +7,20 @@
 # To figure out what files an app is changing use: `inotifywait -m ~/`
 
 # Upgrade the system, post-installer and install AUR helper
+SCRIPT_PATH="$0"
 sudo pacman -Syu --noconfirm
 sudo pacman -S --needed --noconfirm git base-devel rustup
 rustup default stable
 git config --global user.name "default" # CHANGE IF NECESSARY
 git config --global user.email "default@email.com" # CHANGE IF NECESSARY
-git pull # Update post-installer if necessary
-utilities/installpackage.sh yay "https://aur.archlinux.org/yay.git"
+OLD_HASH=$(sha256sum "$SCRIPT_PATH" | awk '{print $1}')
+git pull # Obtain latest version of post-installer
+NEW_HASH=$(sha256sum "$SCRIPT_PATH" | awk '{print $1}')
+if [ "$OLD_HASH" != "$NEW_HASH" ]; then
+  echo "Script updated! Relaunching..."
+  exec "$SCRIPT_PATH" "$@"
+  exit 0
+fi
 
 # Copy the configs
 mkdir -p ~/Templates
@@ -141,6 +148,7 @@ aur_apps=(
 # Install all the apps
 apps_string=$(IFS=' '; echo "${apps[*]}")
 aur_string=$(IFS=' '; echo "${aur_apps[*]}")
+utilities/installpackage.sh yay "https://aur.archlinux.org/yay.git"
 yay -S --needed --noconfirm $apps_string
 yay -S --needed --noconfirm $aur_string
 
