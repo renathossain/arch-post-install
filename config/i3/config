@@ -160,9 +160,6 @@ gaps inner 10
 exec --no-startup-id /usr/bin/flameshot
 bindsym Print exec flameshot gui
 
-# Audio Controls
-exec --no-startup-id /usr/bin/volumeicon
-
 # Set Terminal
 bindsym $mod+Return exec kitty
 

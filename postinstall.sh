@@ -111,7 +111,7 @@ apps=(
     timeshift                       # File System Snapshots
     cronie                          # Schedule Services
     flameshot                       # Screenshot Utility
-    volumeicon                      # Volume control applet
+    pasystray                       # Volume control applet
     xorg-xev                        # Record Mouse Button Events
     xorg-xwininfo                   # Print Info about X11 Windows
     xorg-xset                       # Adjust X11 Screen blanking
