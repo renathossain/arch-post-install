@@ -24,13 +24,13 @@ fi
 
 # Copy the configs
 mkdir -p ~/Templates
-cp -rf Templates/* ~/Templates/
-cp -rf config/* ~/.config/
-cp -rf local/* ~/.local/
-sudo cp -rf etc/* /etc/
-sudo cp -rf usr/* /usr/
-sudo cp -rf boot/* /boot/
-sudo cp -rf var/* /var/
+cp -rf Templates/. ~/Templates/
+cp -rf config/. ~/.config/
+cp -rf local/. ~/.local/
+sudo cp -rf etc/. /etc/
+sudo cp -rf usr/. /usr/
+sudo cp -rf boot/. /boot/
+sudo cp -rf var/. /var/
 
 # XFCE Settings
 xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -s true --create
@@ -41,12 +41,12 @@ xfconf-query -c xfce4-notifyd -p /compat/use-override-redirect-windows -t bool -
 read -p "Do you want to go with a light theme? (y/n): " response
 if [[ "$response" == "y" || "$response" == "Y" ]]; then
   xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita
-  cp -rf light/config/* ~/.config/
-  sudo cp -rf light/etc/* /etc/
+  cp -rf light/config/. ~/.config/
+  sudo cp -rf light/etc/. /etc/
 else
   xfconf-query -c xsettings -p /Net/ThemeName -s Adwaita-dark
-  cp -rf dark/config/* ~/.config/
-  sudo cp -rf dark/etc/* /etc/
+  cp -rf dark/config/. ~/.config/
+  sudo cp -rf dark/etc/. /etc/
 fi
 
 # Install official Arch Linux apps
